@@ -1,0 +1,58 @@
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "Compilar MPI",
+//       "type": "shell",
+//       "command": "cl",
+//       "args": [
+//         "/I", "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Include",
+//         "ej1.c",
+//         "/link",
+//         "/LIBPATH:C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Lib\\x64",
+//         "msmpi.lib"
+//       ],
+//       "group": {
+//         "kind": "build",
+//         "isDefault": true
+//       },
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-mpi",
+            "type": "shell",
+            "command": "mpicc",
+            "args": [
+                "-g",
+                "-o",
+                "${workspaceFolder}/bin/mpi_program",
+                "${workspaceFolder}/src/*.c",  // ← Compila TODOS los .c
+                "-lm"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build-mpi-single",
+            "type": "shell",
+            "command": "mpicc",
+            "args": [
+                "-g",
+                "-o",
+                "${workspaceFolder}/bin/mpi_program",
+                "${file}",  // ← Compila el archivo ACTUALMENTE abierto
+                "-lm"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
