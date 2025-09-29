@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
 
     if (my_rank == 0) {
-        printf("Ingrese matriz de orden n (debe ser divisible por comm_sz): ");
+        printf("Ingrese orden de matriz n (debe ser divisible por comm_sz): ");
         fflush(stdout);
         scanf("%d", &n);
 
