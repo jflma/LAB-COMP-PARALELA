@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
         MPI_Recv(&sum, 1, MPI_INT, my_rank - p, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
 
-    printf("Process %d: Global sum = %d\n", my_rank, sum);
+    printf("Proceso %d: Global suma = %d\n", my_rank, sum);
 
     MPI_Finalize();
     return 0;

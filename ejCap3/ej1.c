@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     MPI_Reduce(local_bins, bin_counts, bin_count, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if (my_rank == 0) {
-        printf("Histogram:\n");
+        printf("Histograma:\n");
         for (int i = 0; i < bin_count; i++) {
             float bin_start = min_meas + i * bin_width;
             float bin_end = bin_start + bin_width;

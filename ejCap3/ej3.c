@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     }
 
     if (my_rank == 0) {
-        printf("Global sum = %d\n", sum);
+        printf("Global suma = %d\n", sum);
     }
 
     MPI_Finalize();

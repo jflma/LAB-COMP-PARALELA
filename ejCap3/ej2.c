@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
 
     if (my_rank == 0) {
-        printf("Enter the total number of tosses: ");
+        printf("Introduzca el numero total de tiradas: ");
         fflush(stdout);
         scanf("%lld", &total_tosses);
     }
@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 
     if (my_rank == 0) {
         double pi_estimate = 4.0 * (double)number_in_circle / ((double) total_tosses);
-        printf("Estimated pi = %lf\n", pi_estimate);
+        printf("Estimado pi = %lf\n", pi_estimate);
     }
 
     MPI_Finalize();
